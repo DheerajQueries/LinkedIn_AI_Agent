@@ -2,8 +2,15 @@ Step 1: Setting Up Your Project Workspace
 -> This first step is crucial because it creates a dedicated and clean space for your project. Think of it like setting up a new, organized workbench before you start building.
 
 Action 1: Create a Project Folder -> LinkedIn_AI_Agent
--> This folder will be the home for all the files related to this project.
+This folder will serve as the home for all files related to this project.
 
 Action 2: Create a Virtual Environment
 cd path/to/your/linkedin_ai_agent -> Run the command > python -m venv venv
 This command creates a "virtual environment" inside your project folder (in a new sub-folder named venv).
+
+Action 3: Activate the Virtual Environment (Activating the environment tells your terminal, "From now on, for any Python-related command I run, use the tools and Python version inside this project's venv folder)
+Command to run -> venv\Scripts\activate
+
+Step 2: Installing the Necessary Libraries
+Action 1: Create a requirements.txt File
+Action 2: Define Your Project's Dependencies
