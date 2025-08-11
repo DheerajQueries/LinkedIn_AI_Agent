@@ -30,3 +30,44 @@ Run the command to install -> pip install -r requirements.txt
 
 Step 3: Acquiring and Storing Your API Keys
 
+Action 1: Get Your Google AI (Gemini) API Key
+Action 2: Get Your SerpApi API Key
+Action 3: Create/Update Your .env File
+
+Open the newly created .env file and the code below
+GOOGLE_API_KEY="your_google_ai_api_key_here"
+SERPAPI_API_KEY="your_serpapi_api_key_here"
+
+
+Step 4: Building the Post-Generation Agent (with Gemini)
+
+Action 1: Create Your Main Python File
+What to do: In your project folder (linkedin_ai_agent), create a new file named main.py.
+Why we are doing this: This will be the central script for our project. We will run this single file to execute the entire process, from generating posts to fact-checking them.
+
+
+Action 2: Load Your API Keys and Import Libraries (Add below code to the main.py file)
+
+# For loading environment variables (the keys)
+from dotenv import load_dotenv
+import os
+
+# LangChain components for Google Gemini
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain.prompts import PromptTemplate
+from langchain.chains import LLMChain
+
+# --- Step 1: Load Environment Variables ---
+# This command finds the .env file and loads the variables
+load_dotenv()
+
+# We can now access the keys using os.getenv()
+google_api_key = os.getenv("GOOGLE_API_KEY")
+serpapi_api_key = os.getenv("SERPAPI_API_KEY")
+
+print("API Keys loaded successfully.")
+
+The first three import statements bring in the necessary tools we installed earlier.
+load_dotenv() is the command that actually reads your .env file.
+os.getenv("YOUR_KEY_NAME") securely retrieves the keys from the loaded environment, so we can use them in the script without ever writing the actual key strings here.
+
